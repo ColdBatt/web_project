@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+</head>
+<body>
+
+
+    <table border="1" bgcolor="#243D3F" cellpadding="10" style="width:100%; border-radius:5px">
+        <tr>
+        <th>
+            <h1 style="color:#38C112">Компьютерный помощник</h1>
+                <nav>
+                    {% if current_user.is_authenticated %}
+                        <a class="navbar-brand" href="/logout"><p>Выйти</p></a>
+                    {% else %}
+                        <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+                        <a class="btn btn-success" href="/login">Войти</a>
+                    {% endif %}
+                </nav>
+            <form name="startpage" method="POST" action="/homepage">
+                <button type="submit" name="submit" value="success" class="btn btn-default">Главное меню</button>
+            </form>
+        </th>
+        </tr>
+    </table>
+
+    <table border="1" width="100%" bgcolor="#A9EDF2">
+        {% for item in myassemblies %}
+        <tr>
+            <td width="10">Процессор</td>
+            <td width="10">Охлаждение</td>
+            <td width="10">Оперативная память</td>
+            <td width="10">Видеокарта</td>
+            <td width="10">Жёсткий диск</td>
+            <td width="10">SSD диск 1</td>
+            <td width="10">SSD диск 2</td>
+            <td width="10">DVD-привод</td>
+            <td width="10">Корпус</td>
+            <td width="10">Блок питания</td>
+            <td width="10">Wi-Fi адаптер</td>
+            <td width="10">Звуковая карта</td>
+        </tr>
+        <tr>
+            <td width="10">{{ item.cpu }}</td>
+            <td width="10">{{ item.cooling }}</td>
+            <td width="10">{{ item.ram }}</td>
+            <td width="10">{{ item.videocard }}</td>
+            <td width="10">{{ item.HDD }}</td>
+            <td width="10">{{ item.SSDdisk1 }}</td>
+            <td width="10">{{ item.SSDdisk2 }}</td>
+            <td width="10">{{ item.DVDdrive }}</td>
+            <td width="10">{{ item.Housing }}</td>
+            <td width="10">{{ item.PowerSupply }}</td>
+            <td width="10">{{ item.WiFiadapter }}</td>
+            <td width="10">{{ item.Soundcard }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <!--Очистить-->
+    <form name="startpage" method="POST" action="/delete">
+        <button type="submit" name="submit" value="success" class="btn btn-default">Очистить</button>
+    </form>
+    <form name="startpage" method="POST" action="/back">
+        <button type="submit" name="submit" value="success" class="btn btn-default">Создание сборки</button>
+    </form>
+
+
+    <table border="1" bgcolor="#243D3F" height="100" cellpadding="10" style="width:100%; border-radius:5px;">
+        <tr>
+        <th>
+            <h3 style="color:#38C112">2021-создание сайта</h3>
+        </th>
+        </tr>
+    </table>
+
+
+
+</body>
+</html>

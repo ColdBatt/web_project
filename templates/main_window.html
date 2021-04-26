@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Название сайта</title>
+</head>
+<body>
+
+<table align="center" rules="rows" style="width:100%;">
+<tr>
+<td>
+
+    <table border="1" bgcolor="#243D3F" cellpadding="10" style="width:100%; border-radius:5px">
+        <tr>
+        <th>
+            <h1 style="color:#38C112">Компьютерный помощник</h1>
+            <nav>
+            {% if current_user.is_authenticated %}
+                <a class="navbar-brand" href="/logout"><p>Выйти</p></a>
+            {% else %}
+                <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+                <a class="btn btn-success" href="/login">Войти</a>
+            {% endif %}
+        </nav>
+            <form name="startpage" method="POST" action="/homepage">
+                <button type="submit" name="submit" value="success" class="btn btn-default">Главное меню</button>
+            </form>
+        </th>
+        </tr>
+    </table>
+
+
+    <table border="1" bgcolor="#A9EDF2" cellpadding="30" style="width:100%; border-radius:5px; ">
+        <tr>
+        <td rowspan="2" style="width:80%">
+            <h2 style="color:#38C112">Компьютерный помощник</h2>
+            <!--Начинаем абзац с красной строки-->
+            <p style="text-indent:20px">Добро пожаловать! Данный сайт предназначен для новичков.</p>
+            <p style="text-indent:20px">Здесь вы можете получить советы по сборке компьютера, установке windows.</p>
+            <p style="text-indent:20px">Также вы можете изучить готовые сборки, исходя из которых, можете создать свою сборку пк</p>
+            <!--Закрываем ячейку-->
+        </td>
+
+        <!--САЙДБАР-->
+
+        <!--Создаём ячейку сайдбара-->
+        <td bgcolor="#A9EDF2">
+            <h3 style="color:#38C112">Меню</h3>
+            <!--Абзац для ссылки на страницу сайта-->
+            <p>
+                <a href="/assemblies"><dev style="margin-left:5px;">Сборки</dev></a>
+            </p>
+            <p>
+                <a href="/create"><dev style="margin-left:5px;">Создать сборку</dev></a>
+            </p>
+            <p>
+                <a href="/myassemblies"><dev style="margin-left:5px;">Мои сборки</dev></a>
+            </p>
+            <p>
+                <a href="/advice"><dev style="margin-left:5px;">Советы по сборке пк</dev></a>
+            </p>
+            <p>
+                <a href="/windows"><dev style="margin-left:5px;">Совет по установке windows</dev></a>
+
+        </td>
+        </tr>
+
+    </table>
+
+
+    <table border="1" bgcolor="#243D3F" height="100" cellpadding="10" style="width:100%; border-radius:5px;">
+    <tr>
+    <th>
+        <h3 style="color:#38C112">2021-создание сайта</h3>
+    </th>
+    </tr>
+    </table>
+
+</td>
+</tr>
+</table>
+</body>
+</html>

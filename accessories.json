@@ -1,0 +1,17 @@
+{
+    "news": [
+        {"cpu": ["INTEL CORE I3", "INTEL CORE I5", "INTEL CORE I7", "INTEL CORE I9"]},
+        {"cooling": ["Водяное охлаждение", "Воздушное охлаждение", "Кастомное CBO"]},
+        {"motherboard": ["ASUS", "GIGABYTE", "MSI"]},
+		{"ram": ["KINGSTON HYPERX", "G.SKILL", "THERMALTAKE", "CORSAIR", "MICRONE"]},
+		{"videocard": ["GTX 16XX","RTX 3060 TI","RTX 3070", "RTX 3080", "RTX 3090", "NVIDIA QUADRO"]},
+		{"HDD": ["1ТБ", "2ТБ", "3ТБ", "4ТБ", "6ТБ", "8ТБ", "10ТБ", "12ТБ", "14ТБ", "16ТБ"]},
+		{"SSDdisk1": ["120ГБ", "240ГБ", "480ГБ", "1ТБ", "2ТБ"]},
+		{"SSDdisk2": ["120ГБ", "240ГБ", "480ГБ", "1ТБ", "2ТБ"]},
+		{"DVDdrive": ["ВНЕШНИЙ", "ВНУТРЕННИЙ"]},
+		{"Housing": ["ZALMAN", "COOLER MASTER", "COUGAR", "AEROCOOL", "DEEPCOOL", "ASUS ROG", "CORSAIR", "THERMALTAKE", "MSI GAMING", "1STPLAYER", "GIGABYTE", "CASE"]},
+		{"PowerSupply": ["ОТ 500W", "ОТ 600W", "ОТ 700W", "ОТ 800W", "ОТ 1000W"]},
+		{"WiFiadapter": ["TP-LINK", "ASUS"]},
+		{"Soundcard": ["ASUS", "CREATIVE"]}
+    ]
+}

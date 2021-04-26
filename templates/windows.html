@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Название сайта</title>
+</head>
+<body>
+
+<table align="center" rules="rows" style="width:100%;">
+<tr>
+<td>
+
+    <table border="1" bgcolor="#243D3F" cellpadding="10" style="width:100%; border-radius:5px">
+        <tr>
+        <th>
+            <h1 style="color:#38C112">Компьютерный помощник</h1>
+            <nav>
+            {% if current_user.is_authenticated %}
+                <a class="navbar-brand" href="/logout"><p>Выйти</p></a>
+            {% else %}
+                <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+                <a class="btn btn-success" href="/login">Войти</a>
+            {% endif %}
+        </nav>
+            <form name="startpage" method="POST" action="/homepage">
+                <button type="submit" name="submit" value="success" class="btn btn-default">Главное меню</button>
+            </form>
+        </th>
+        </tr>
+    </table>
+
+
+    <table border="1" bgcolor="#A9EDF2" cellpadding="30" style="width:100%; border-radius:5px; ">
+        <tr>
+        <td rowspan="2" style="width:80%">
+            <h2 style="color:#38C112">Вы готовы?</h2>
+            <!--Начинаем абзац с красной строки-->
+            <p style="text-indent:20px">Мы подразумеваем, что у вас уже есть загрузочная флешка для установки Виндовс.</p>
+            <h2 style="color:#38C112">Как войти в BIOS на разных ПК?</h2>
+            <p style="text-indent:20px">Вход в BIOS осуществляется путем нажатия клавиши либо комбинации клавиш при загрузке компьютера. Какая это клавиша — определяет производитель вашей материнской платы. </p>
+            <p style="text-indent:20px">В списке приведены самые распространенные клавиши для входа в BIOS: Delete, F1, F2, F8, F10, TAB, Ctrl+Alt+Esc, Ctrl+Alt+S, CtrI+AIt+Ins, Esc.</p>
+            <h2 style="color:#38C112">Как в биосе выбрать загрузку с флешки?</h2>
+            <p style="text-indent:20px">Итак, вы вошли в BIOS. Дальшейшие действия зависят от производителя микропрограммы, которую производитель решил прошить в вашу материнскую плату. Расскажем, как сделать флешку загрузочным носителем для нескольких популярных прошивок BIOS.</p>
+            <h2 style="color:#38C112">AMI BIOS</h2>
+            <p style="text-indent:20px">Если, зайдя в BIOS, вы увидели экран, как на картинке ниже (или похожий), следуйте этой инструкции.</p>
+            <img src="https://ichip.ru/blobimgs/uploads/2019/06/gambar2.jpg" alt="здесь должна была быть картинка, но не нашлась">
+            <p style="text-indent:20px">1.Нажимая клавишу со стрелкой «вправо», дойдите до экрана Boot</p>
+            <p style="text-indent:20px">2.Нажав клавишу со стрелкой «вниз», выберите Hard Disk Drives и нажмите Enter.</p>
+            <p style="text-indent:20px">3.Нажмите Enter на строке 1st Boot Device. Во всплывающем окне, пользуясь клавишами «вверх» и «вниз», укажите вашу флешку и нажмите Enter.</p>
+            <p style="text-indent:20px">4.Теперь нажмите F10, чтобы сохранить изменения и выйти. Клавишей «влево» во всплывающем окне выберите YES и нажмите Enter.</p>
+            <p style="text-indent:20px">Так вы сделаете перезагрузку компьютера, и начнется запуск установщика Windows с вашего USB-носителя.</p>
+            <h2 style="color:#38C112">AWARD/Phoenix BIOS</h2>
+            <p style="text-indent:20px">Если при запуске BIOS вы видите вот такую картинку (или с теми же надписями, но другого цвета), следуйте инструкции ниже.</p>
+            <img src="https://ichip.ru/blobimgs/uploads/2019/06/0001-1.gif" alt="здесь должна была быть картинка, но не нашлась">
+            <p style="text-indent:20px">1.Стрелкой «вниз» откройте Advanced BIOS Features и нажмите Enter.</p>
+            <p style="text-indent:20px">2.Нажмите Enter на подсвеченном пункте 1st Boot Device.</p>
+            <p style="text-indent:20px">3.Появится список устройств, с которых можно включить загрузку с флешки в биосе. Для загрузки с флешки необходимо выбрать стрелками «вверх» и «вниз» пункт USB-HDD или USB-Flash, после чего нажать Enter.</p>
+            <p style="text-indent:20px">4.Нажмите Esc, чтобы выйти на уровень вверх, и cтрелками «вниз» и «вправо» выберите пункт меню Save & Exit Setup.</p>
+            <h2 style="color:#38C112">InsydeH20 Setup Utility</h2>
+            <p style="text-indent:20px">Еще одна, чуть менее популярная прошивка. Если при входе в BIOS вы видите вот такой экран, следуйте инструкциям ниже.</p>
+            <img src="https://ichip.ru/blobimgs/uploads/2019/06/0leyyou.jpg" alt="здесь должна была быть картинка, но не нашлась">
+            <p style="text-indent:20px">1.С помощью клавиши «вправо» необходимо дойти до пункта «Boot».</p>
+            <p style="text-indent:20px">2.Установить пункт External Device Boot в положение Enabled.</p>
+            <p style="text-indent:20px">3.Ниже, в разделе Boot Priority с помощью клавиш F5 и F6 установить External Device на первую позицию. Так вы поставите в приоритет флешку в биосе.</p>
+            <p style="text-indent:20px">4.После этого перейдите к пункту Exit в меню сверху и выберите Save and Exit Setup.</p>
+            <p style="text-indent:20px">Компьютер перезагрузится с нужного носителя, и начнется установка Windows.</p>
+        </td>
+
+
+
+    <table border="1" bgcolor="#243D3F" height="100" cellpadding="10" style="width:100%; border-radius:5px;">
+    <tr>
+    <th>
+        <h3 style="color:#38C112">2021-создание сайта</h3>
+    </th>
+    </tr>
+    </table>
+
+</td>
+</tr>
+</table>
+</body>
+</html>

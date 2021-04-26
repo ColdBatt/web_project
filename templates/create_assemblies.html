@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+</head>
+<body>
+
+
+    <table border="1" bgcolor="#243D3F" cellpadding="10" style="width:100%; border-radius:5px">
+        <tr>
+        <th>
+            <h1 style="color:#38C112">Компьютерный помощник</h1>
+                <nav>
+                    {% if current_user.is_authenticated %}
+                        <a class="navbar-brand" href="/logout"><p>Выйти</p></a>
+                    {% else %}
+                        <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+                        <a class="btn btn-success" href="/login">Войти</a>
+                    {% endif %}
+                </nav>
+            <form name="startpage" method="POST" action="/homepage">
+                <button type="submit" name="submit" value="success" class="btn btn-default">Главное меню</button>
+            </form>
+        </th>
+        </tr>
+    </table>
+
+<form name="startpage" method="POST" action="/myassemblies">
+    <div class="form-group">
+        <div class="input-group">
+            <label>Процессор:</label>
+            <select name = "CPU" id = "CPU">
+                {% for item in cpu['cpu'] %}
+                <option value="{{ item }}">{{ item }}</option>
+                 {% endfor %}
+            </select>
+            <label>Охлаждение:</label>
+            <select name = "cooling" id = "cooling">
+                {% for item in cooling['cooling'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>Материнская плата:</label>
+            <select name = "motherboard" id = "motherboard">
+                {% for item in motherboard['motherboard'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>Оперативная память:</label>
+            <select name = "ram" id = "ram">
+                {% for item in ram['ram'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>Видеокарта:</label>
+            <select name = "videocard" id = "videocard">
+                {% for item in videocard['videocard'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>Жёсткий диск:</label>
+            <select name = "HDD" id = "HDD">
+                {% for item in HDD['HDD'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>SSD диск 1:</label>
+            <select name = "SSDdisk1" id = "SSDdisk1">
+                {% for item in SSDdisk1['SSDdisk1'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>SSD диск 2:</label>
+            <select name = "SSDdisk2" id = "SSDdisk2">
+                {% for item in SSDdisk2['SSDdisk2'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>DVD-привод:</label>
+            <select name = "DVDdrive" id = "DVDdrive">
+                {% for item in DVDdrive['DVDdrive'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>Корпус:</label>
+            <select name = "Housing" id = "Housing">
+                {% for item in Housing['Housing'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>Блок питания:</label>
+            <select name = "PowerSupply" id = "PowerSupply">
+                {% for item in PowerSupply['PowerSupply'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>Wi-Fi адаптер:</label>
+            <select name = "WiFiadapter" id = "WiFiadapter">
+                {% for item in WiFiadapter['WiFiadapter'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <label>Звуковая карта:</label>
+            <select name = "Soundcard" id = "Soundcard">
+                {% for item in Soundcard['Soundcard'] %}
+                <option value="{{item}}">{{ item }}</option>
+                {% endfor %}
+            </select>
+
+        </div>
+        <button type="submit" name="submit" value="success" class="btn btn-default">Создать</button>
+    </div>
+    </form>
+
+
+    <table border="1" bgcolor="#243D3F" height="100" cellpadding="10" style="width:100%; border-radius:5px;">
+    <tr>
+    <th>
+        <h3 style="color:#38C112">2021-создание сайта</h3>
+    </th>
+    </tr>
+    </table>
+
+
+
+</body>
+</html>

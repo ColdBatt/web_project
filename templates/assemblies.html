@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Название сайта</title>
+</head>
+<body>
+
+<table align="center" rules="rows" style="width:100%;">
+<tr>
+<td>
+
+    <table border="1" bgcolor="#243D3F" cellpadding="10" style="width:100%; border-radius:5px">
+        <tr>
+        <th>
+            <h1 style="color:#38C112">Компьютерный помощник</h1>
+            <nav>
+            {% if current_user.is_authenticated %}
+                <a class="navbar-brand" href="/logout"><p>Выйти</p></a>
+            {% else %}
+                <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+                <a class="btn btn-success" href="/login">Войти</a>
+            {% endif %}
+        </nav>
+            <form name="startpage" method="POST" action="/homepage">
+                <button type="submit" name="submit" value="success" class="btn btn-default">Главное меню</button>
+            </form>
+        </th>
+        </tr>
+    </table>
+
+    <table border="1" width="80%">
+        <p1><big><b>Оптимальная сборка для fullHD:</b></big></p1>
+        <div><b>Процессор:</b> AMD Ryzen 5 3600      Цена:{{cpu}}</div>
+       <div> Данная модель прекрасно подойдет для игр в fullHD а так же 2K</div>
+       <div> <b>Видеокарта:</b> 1050ti      Цена:{{gpu1}}</div>
+       <div> Выбор данной видеокарты остается чуть ли не единственным в нынешнее время. Она
+           позволит запустить любую онлайн игру в FullHD на высоких-ультра настройках. AAA
+           проекты же пойдут на средне-высоких настройках графики</div>
+       <div> <b>Материнская плата:</b> ASRock B450M Pro4‑F       Цена:{{mother}}</div>
+      <div>  <b>Блок питания:</b> AEROCOOL VX PLUS 600W       Цена:{{power}}</div>
+       <div> <b>Кулер для процессора:</b> DEEPCOOL GAMMAXX S40    Цена: {{fan}}</div>
+       <div> <b>Оперативная память:</b> Hyperx Fury 3200мгц   Цена: {{ram}}</div>
+       <div> 8гб x2 16 гб оперативной памяти это минимум в наше время</div>
+        <div><b>HDD:</b> WD Blue 1тб      Цена: {{hdd}}</div>
+       <div> <b>SSD:</b> KINGSTON A400 SA400S37  256гб      Цена: {{ssd}}</div><br/><br/>
+
+
+       <p1> <big><b>Оптимальная сборка для 2K:</b></big></p1>
+        <div><b>Процессор:</b> AMD Ryzen 5 3600    Цена:{{cpu}}</div>
+       <div> Данная модель прекрасно подойдет для игр в fullHD а так же 2K</div>
+       <div> <b>Видеокарта:</b> GeForce RTX 2070 SUPER     Цена: 47990</div>
+       <div> <b>Материнская плата:</b> ASRock B450M Pro4‑F</div>
+       <div> <b>Блок питания:</b> AEROCOOL VX PLUS 750W       Цена: {{power2}}</div>
+       <div> <b>Кулер для процессора:</b> DEEPCOOL GAMMAXX S40</div>
+       <div> <b>Оперативная память:</b> Hyperx Fury 3200мгц</div>
+       <div> 8гб x2 16 гб оперативной памяти это минимум в наше время</div>
+       <div> <b>HDD:</b> WD Blue 1тб</div>
+       <div> <b>SSD:</b> KINGSTON A400 SA400S37 на 256гб или 512гб</div>
+
+
+    </table>
+
+    <!--Создаём таблицу жопки-->
+    <table border="1" bgcolor="#243D3F" height="100" cellpadding="10" style="width:100%; border-radius:5px;">
+    <tr>
+    <th>
+        <h3 style="color:#38C112">2021-создание сайта</h3>
+    </th>
+    </tr>
+    </table>
+
+
+
+</body>
+</html>
